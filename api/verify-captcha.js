@@ -23,7 +23,7 @@ export default async (req, res) => {
         return res.status(400).send({ success: false, message: "Token is required" });
     }
 
-    const secretKey = "ВАШ_SECRET_KEY"; // Замените на ваш секретный ключ reCAPTCHA
+    const secretKey = "6LduepoqAAAAAPSe_OIORcfu-V3oLeuWQAj9ySQg"; // Замените на ваш секретный ключ reCAPTCHA
 
     try {
         // Отправка запроса к Google для проверки токена reCAPTCHA
@@ -34,7 +34,6 @@ export default async (req, res) => {
         });
 
         const data = await response.json();
-        console.log("reCAPTCHA response:", data);
 
         if (data.success) {
             return res.status(200).send({ success: true, message: "Verification successful" });
