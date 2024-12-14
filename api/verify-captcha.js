@@ -36,9 +36,9 @@ export default async (req, res) => {
         const data = await response.json();
 
         if (data.success) {
-            return res.status(200).send({ data });
+            return res.status(200).send(data);
         } else {
-            return res.status(400).send({ data });
+            return res.status(400).send(data);
         }
     } catch (error) {
         console.error("Error during reCAPTCHA verification:", error);
