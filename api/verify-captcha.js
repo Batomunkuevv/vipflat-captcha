@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 module.exports = async (req, res) => {
     if (req.method !== "POST") {
@@ -14,6 +14,7 @@ module.exports = async (req, res) => {
     const secretKey = "6LduepoqAAAAAPSe_OIORcfu-V3oLeuWQAj9ySQg";
 
     try {
+
         const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
